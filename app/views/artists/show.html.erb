@@ -9,6 +9,16 @@
   <strong>Genre:</strong>
   <%= @artist.genre.name %>
 </p>
+<p>
+  <strong>Songs it this artist:</strong>
+   <ul>
+     <% @artist.songs.each do |song| %>
+     <li>
+       <%= link_to song.name, song %>
+     </li>
+     <% end %>
+   </ul>
+</p>
 
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>
